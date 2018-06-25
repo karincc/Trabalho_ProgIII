@@ -1,0 +1,37 @@
+package services;
+
+import java.util.List;
+
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
+
+import modelo.Usuario;
+
+@Path("/usuario")
+public class UsuarioService implements DAO<Usuario>{
+
+	@Override
+	public Response adicionar(Usuario obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Response excluir(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Usuario> listarTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Response listar(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

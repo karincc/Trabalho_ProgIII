@@ -1,0 +1,16 @@
+package services;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+
+@Path("/testeService")
+public class TesteService {
+	
+	@GET
+	@Produces("text/plain")
+	public String imprimir() {
+		return "Teste WB CT";
+	}
+
+}

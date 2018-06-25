@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Cadastro Professor</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+	<!-- Custom styles for this template -->
+    <link href="./css/cadProf.css" rel="stylesheet">
+</head>
+<body>
+	<form class="form-cad">
+		<p>
+			<label for="inputName">* Nome</label>
+			<input type="text" id="inputName" class="form-control" placeholder="* Nome" pattern="[A-Za-z]*" required autofocus>
+		</p>
+		<p>
+			<label for="inputEmail">* E-mail</label>
+			<input type="email" id="inputEmail" class="form-control" placeholder="* E-mail" required>
+		</p>
+		<p>
+			<label for="inputDate">* Data de Nascimento</label>
+			<input type="date" id="inputDate" class="form-control" min="1900-01-01" required>
+		</p>
+
+		<p>
+			<label for="inputGenre">* Genero</label>
+			<select type="combobox" id="inputGenre" class="form-control" required>
+			    <option value="Masculino">Masculino</option>
+			    <option value="Feminino">Feminino</option>
+			    <option value="Outro">Outro</option>
+			</select>
+		</p>
+		<p>
+			<label for="inputModality">* Modalidade</label>
+			<select type="combobox" id="inputModality" class="form-control" required>
+			    <option value="Modalidade A">Modalidade A</option>
+			    <option value="Modalidade B">Modalidade B</option>
+			    <option value="Modalidade C">Modalidade C</option>
+			</select>
+		</p>
+		<p>
+			<button type="submit" class="btn btn-lg btn-success btn-block">Gravar</button>
+		</p>
+		<p>
+			<button type="submit" class="btn btn-lg btn-danger btn-block">Excluir</button>
+		</p>
+	</form>
+</body>
+</html>

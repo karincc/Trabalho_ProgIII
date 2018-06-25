@@ -1,0 +1,10 @@
+INDEX VERSION 1.3+C:\Users\KAREN\Documents\GitHub\trabalho3-temalivre-douglas_karin_ct\Fontes\webservice\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2141641848.index
+471573729.index
+3176509021.index
+471573729.index
+2964343356.index
+294757439.index
+9541901.index
+1973255203.index
+2092572964.index

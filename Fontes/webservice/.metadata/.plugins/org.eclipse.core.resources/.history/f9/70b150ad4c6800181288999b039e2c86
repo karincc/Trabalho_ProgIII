@@ -1,0 +1,10 @@
+package services;
+
+import javax.ws.rs.Path;
+
+import modelo.Horario;
+
+@Path("/horario")
+public class HorarioService implements DAO<Horario>{
+
+}

@@ -1,0 +1,51 @@
+﻿/*
+Menu horizontal da pagina index.html
+Criado em: 09/06/2018
+*/
+
+.menus img {
+    /*float: left;*/
+    display: block;
+    width: 273; 
+    height: 106;
+}
+
+.menus nav {
+    /*float: center;*/
+    display: block;
+    color: #000000
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#menu {
+    float: left;
+    display: block;
+    height:106;
+}
+
+#menu ul {
+    padding: 0px;
+    margin: 0px;
+    /*background-color: #D5D6D8;*/
+    list-style: none;
+}
+
+#menu ul li { display: inline; }
+
+#menu ul li a {
+    padding: 2px 10px;
+    display: inline-block;
+
+    /* visual do link */
+    /*background-color: #D5D6D8;*/
+    color: #030303;
+    text-decoration: none;
+    /*border-bottom: 3px solid #D5D6D8;*/
+}
+
+#menu ul li a:hover {
+    background-color: #D6D6D6;
+    color: #6D6D6D;
+}

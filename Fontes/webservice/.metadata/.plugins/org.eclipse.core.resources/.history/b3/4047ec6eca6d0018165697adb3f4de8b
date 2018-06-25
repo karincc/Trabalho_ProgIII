@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<meta name="viewport" content="width=divece-width, initial-scale=1">
+	<title>Centro de Treinamento Apolo</title>
+</head>
+<body>
+	<h2>Centro de Treinamento Apolo</h2>
+	<img class="img-thumbnail" src="img/inicial.png">
+</body>
+</html>

@@ -1,0 +1,10 @@
+package services;
+
+import javax.ws.rs.Path;
+
+import modelo.Usuario;
+
+@Path("/usuario")
+public class UsuarioService implements DAO<Usuario>{
+
+}

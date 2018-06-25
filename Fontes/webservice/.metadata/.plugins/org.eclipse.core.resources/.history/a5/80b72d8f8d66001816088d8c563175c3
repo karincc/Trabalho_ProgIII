@@ -1,0 +1,54 @@
+package modelo;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Agendamento")
+public class Agendamento {
+	private int id;
+	private Date dataHora;
+	private int usuario;
+	private int professor;
+	
+	public Agendamento() {
+		
+	}
+	
+	public Agendamento(int id, Date dataHora, int usuario, int professor){
+		setId(id);
+		setDataHora(dataHora);
+		setUsuario(usuario);
+		setProfessor(professor);
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public Date getDataHora() {
+		return dataHora;
+	}
+	public void setDataHora(Date dataHora) {
+		this.dataHora = dataHora;
+	}
+	
+	public int getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(int usuario) {
+		this.usuario = usuario;
+	}
+	
+	public int getProfessor() {
+		return professor;
+	}
+	public void setProfessor(int professor) {
+		this.professor = professor;
+	}
+}

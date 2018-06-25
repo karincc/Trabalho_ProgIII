@@ -1,0 +1,66 @@
+package services;
+
+import java.util.List;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import controle.ConexaoDB;
+import modelo.Professor;
+
+@Path("/professor")
+public class ProfessorService implements DAO<Professor>{
+
+	@POST
+	@Consumes("application/json")
+	@Override
+	public Response adicionar(Professor obj) {
+		ConexaoDB.manager.getTransaction().begin();
+		ConexaoDB.manager.persist(obj);
+		ConexaoDB.manager.getTransaction().commit();
+		
+		return Response.status(200).build();
+	}
+
+//	@PUT
+//	@Path("/alterar/{novo}/{idAntigo}")
+//	@Consumes("application/json")
+//	@Override
+//	public Response alterar(@PathParam("novo") Professor objNovo, @PathParam("idAntigo") int idAntigo) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+	@DELETE
+	@Consumes("application/json")
+	@Override
+	public Response excluir(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@GET
+	@Produces("application/json")
+	@Override
+	public List<Professor> listarTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@GET
+	@Path("/{id}")
+	@Produces("application/json")
+	@Override
+	public Response listar(@PathParam("id") int id) {
+		Professor p = ConexaoDB.manager.find(Professor.class, id);
+		return Response.status(200).entity(p).type(MediaType.APPLICATION_JSON).build();
+	}
+
+}

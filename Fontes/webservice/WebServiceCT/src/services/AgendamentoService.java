@@ -1,0 +1,90 @@
+/**
+ * Back-end de agendamento de horarios de aula/treinamento
+ * 
+ * Implementa interface DAO
+ * 
+* @version 0.1
+ * @see DAO, Agendamento
+ */
+
+package services;
+
+import javax.persistence.TypedQuery;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import controle.ConexaoDB;
+import modelo.Agendamento;
+
+@Path("/agendamento")
+public class AgendamentoService implements DAO<Agendamento>{
+
+	@POST
+	@Consumes("application/json")
+	@Override
+	public Response adicionar(Agendamento obj) {
+		ConexaoDB.manager.getTransaction().begin();
+		ConexaoDB.manager.persist(obj);
+		ConexaoDB.manager.getTransaction().commit();
+		
+		return Response.status(200).build();
+	}
+
+	@PUT
+	@Path("/{id}")
+	@Consumes("application/json")
+	@Override
+	public Response alterar(Agendamento objNovo, @PathParam("id") int idAntigo) {
+		Agendamento agendamentoAntigo = ConexaoDB.manager.find(Agendamento.class, idAntigo); 
+		
+		ConexaoDB.manager.getTransaction().begin();
+		agendamentoAntigo.setDataHora(objNovo.getDataHora());
+		agendamentoAntigo.setModalidade(objNovo.getModalidade());
+		agendamentoAntigo.setUsuario(objNovo.getUsuario());
+		ConexaoDB.manager.getTransaction().commit();
+		
+		return Response.status(201).entity("Agedamento alterado").build();
+	}
+
+	@DELETE
+	@Path("/{id}")	
+	@Consumes("application/json")
+	@Override
+	public Response excluir(@PathParam("id") int id) {
+		Agendamento a = ConexaoDB.manager.find(Agendamento.class, id);
+		
+		ConexaoDB.manager.getTransaction().begin();
+		ConexaoDB.manager.remove(a);
+		ConexaoDB.manager.getTransaction().commit();
+
+		return Response.status(200).build();
+	}
+
+	@GET
+	@Produces("application/json")
+	@Override
+	public Response listarTodos() {
+		TypedQuery<Agendamento> resultado = ConexaoDB.manager.createQuery(
+				"SELECT NEW Agendamento(id, dataHora, modalidade, usuario) FROM Agendamento a", 
+				Agendamento.class);
+		
+		return Response.status(200).entity(resultado.getResultList()).type(MediaType.APPLICATION_JSON).build();
+	}
+
+	@GET
+	@Path("/{id}")
+	@Produces("application/json")
+	@Override
+	public Response listar(@PathParam("id") int id) {
+		Agendamento a = ConexaoDB.manager.find(Agendamento.class, id);
+
+		return Response.status(200).entity(a).type(MediaType.APPLICATION_JSON).build();
+	}
+}

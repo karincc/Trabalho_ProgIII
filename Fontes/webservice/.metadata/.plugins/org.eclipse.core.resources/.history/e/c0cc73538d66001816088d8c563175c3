@@ -1,0 +1,45 @@
+package modelo;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="horario")
+public class Horario {
+	
+	@Id
+	@GeneratedValue
+	@Column(name="id")
+	private int id;
+	
+	@Column(name="horario", nullable=false)
+	private String horario;
+	
+	public Horario() {
+		
+	}
+	
+	public Horario(int id, String horario) {
+		setId(id);
+		setHorario(horario);
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public String getHorario() {
+		return horario;
+	}
+	public void setHorario(String horario) {
+		this.horario = horario;
+	}
+	
+	
+}

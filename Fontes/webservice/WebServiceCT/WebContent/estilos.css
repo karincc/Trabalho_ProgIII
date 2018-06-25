@@ -1,0 +1,22 @@
+#imagem-menu {
+	max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+}
+
+#imagem-inicial {
+	max-width:500px;
+    height: auto;
+}
+
+#menu {
+  margin-top: 80px;	
+  margin-left: 30px;
+}
+
+#link-nossos-horarios {
+	margin-top: 20px;
+}
+
+

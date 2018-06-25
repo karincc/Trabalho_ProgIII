@@ -1,0 +1,16 @@
+package services;
+
+import java.util.List;
+
+import javax.ws.rs.core.Response;
+
+public interface DAO<T> {
+	Response adicionar(T obj);
+	
+//	Response alterar(T objNovo, int idAntigo);
+	
+	Response excluir(int id);
+	
+	List<T> listarTodos();
+	T listar(int id);	
+}

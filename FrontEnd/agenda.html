@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Agenda</title>
+</head>
+<body>
+	<form class="frmAgenda">
+		<p>
+			* Modalidade
+			<select id="cbModalidade" requid name="Modalidade" title="Modalidade" class="combobox" type="combobox">
+			    <option value="Mod A">Mod A</option>
+			    <option value="Mod B">Mod B</option>
+			    <option value="Mod etc">Mod etc</option>
+			</select>
+		</p>
+		<p>
+			* Professor
+			<select id="cbProfessor" requid name="Professor" title="Professor" class="combobox" type="combobox">
+			    <option value="Prof A">Prof A</option>
+			    <option value="Prof B">Prof B</option>
+			    <option value="Prof etc">Prof etc</option>
+			</select>
+		</p>
+		<p>
+			* Data da aula
+			<input id="edData" required name="Data" title="Data" class="data" type="date" min="1900-01-01">
+		</p>
+		<p>
+			* Horario da aula
+			<input id="edHora" required name="Hora" title="Hora" class="hora" type="time" min="1900-01-01">
+		</p>
+		
+		<input type="submit" class="botao" value="Agendar">
+	</form>
+</body>
+</html>

@@ -1,0 +1,4 @@
+* vai na frente da label dos campos
+Tabelas devem possuir paginação e campo de filtro/busca
+A última tela, cadastro de professores, ficou confuso as opções excluir novo e salvar na mesma tela. Normalmente só aparece um dos botões.
+A opção de novo deveria estar em uma tela externa para que entre na tela de cadastro de professor. A opção de excluir poderia ser habilitada, quando selecionado essa opção a partir de uma tabela externa. O mesmo para o editar.

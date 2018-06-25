@@ -1,0 +1,55 @@
+package services;
+
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import controle.ConexaoDB;
+import modelo.Usuario;
+
+@Path("/usuario")
+public class UsuarioService implements DAO<Usuario>{
+
+	@POST
+	@Consumes("application/json")
+	@Override
+	public Response adicionar(Usuario obj) {
+		ConexaoDB.manager.getTransaction().begin();
+		ConexaoDB.manager.persist(obj);
+		ConexaoDB.manager.getTransaction().commit();
+		
+		return Response.status(200).build();
+	}
+
+	@DELETE
+	@Consumes("application/json")
+	@Override
+	public Response excluir(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Usuario> listarTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@GET
+	@Path("/{id}")
+	@Produces("application/json")
+	@Override
+	public Response listar(@PathParam("id") int id) {
+		Usuario u = ConexaoDB.manager.find(Usuario.class, id);
+		return Response.status(200).entity(u).type(MediaType.APPLICATION_JSON).build();
+	}
+
+}

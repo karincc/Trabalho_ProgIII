@@ -1,0 +1,69 @@
+/**
+ * Classe de dados da modalidade a ser estudada/treinada
+ * 
+ * @version 0.1
+ * @see Professor, Modalidade
+ */
+
+package modelo;
+
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="modalidade")
+public class Modalidade {
+	
+	@Id
+	@GeneratedValue
+	@Column(name="id")
+	private int id;
+	
+	@Column(name="nome")
+	private String nome;
+	
+	@OneToMany(mappedBy="modalidade",targetEntity=Professor.class,fetch=FetchType.LAZY,cascade=CascadeType.ALL)
+	private List<Professor> professores;
+
+	@OneToMany(mappedBy="modalidade",targetEntity=Agendamento.class,fetch=FetchType.LAZY,cascade=CascadeType.ALL)
+	private List<Agendamento> agendamentos;
+	
+	public Modalidade() {
+		
+	}
+	
+	public Modalidade(int id, String nome) {
+		setId(id);
+		setNome(nome);
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public List<Professor> getProfessores() {
+		return professores;
+	}
+
+	public void setProfessores(List<Professor> professores) {
+		this.professores = professores;
+	}
+	
+}

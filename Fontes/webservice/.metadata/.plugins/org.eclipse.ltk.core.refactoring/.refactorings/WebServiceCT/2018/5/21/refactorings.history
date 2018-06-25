@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;modelo.Pesssoa&apos; to &apos;Aluno&apos;&#x0D;&#x0A;- Original project: &apos;WebServiceCT&apos;&#x0D;&#x0A;- Original element: &apos;modelo.Pesssoa&apos;&#x0D;&#x0A;- Renamed element: &apos;modelo.Aluno&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Pesssoa&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;modelo{Pesssoa.java[Pesssoa" matchStrategy="1" name="Aluno" qualified="false" references="true" similarDeclarations="false" stamp="1527206991156" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Principal</title>
+	<link rel="stylesheet" type="text/css" href="./css/menuHorizontal.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+	</script>	
+	<script>
+		function carregar(pagina) {
+			$("#frm").load(pagina);
+		}
+	</script>
+</head>
+<body onload="carregar('login.html')">
+	<div class="menus">
+		<img src="./img/apolo273x106.jpg">
+
+		<nav id="menu">
+			<ul>
+				<li><a onclick="carregar('horario.html')">HORARIOS</a></li> |
+				<li><a onclick="carregar('equipe.html')">EQUIPE</a></li> |
+				<li><a onclick="carregar('sobre.html')">SOBRE NOS</a></li> |
+				<li><a onclick="carregar('agenda.html')">AGENDE UMA AULA</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div id="frm">
+		formulario
+	</div>
+
+	<footer> 
+		rodape
+	</footer>
+</body>
+</html>
